@@ -3,7 +3,7 @@ This code is an implementation of [pairwise semantic segmentation via conjugate 
 
 # Get Started
 ## 1. Data preprocessing
-Download dataset from [LiTS](https://competitions.codalab.org/competitions/17094), and put 131 training data with segmentation masks under './lits/training/'. Split the dataset to 5% proportions of training samples, and 20% validation samples:
+Download dataset from [LiTS](https://competitions.codalab.org/competitions/17094), and put 131 training data with segmentation masks under '../lits/training/'. Split the dataset to 5% proportions of training samples, and 20% validation samples:
 ```
 python prepare_lits.py --data_path '../lits/training/' --pre_data_result '../lits/minor_lits/' --val_num 26 --semi_num 98
 ```
