@@ -5,14 +5,14 @@ This code is an implementation of [pairwise semantic segmentation via conjugate 
 ## 1. Data preprocessing
 Download dataset from [LiTS](https://competitions.codalab.org/competitions/17094), and put 131 training data with segmentation masks under './lits/training/'. Split the dataset to 5% proportions of training samples, and 20% validation samples:
 ```
-python prepare_lits.py --data_path './lits/training/' --pre_data_result './semi_lits/' --val_num 26 --semi_num 98
+python prepare_lits.py --data_path '../lits/training/' --pre_data_result '../lits/minor_lits/' --val_num 26 --semi_num 98
 ```
 Note one can customize the path 'pre_data_result', but should keep the path name consistent in the file 'mypath.py'.
 
 ## 2. Training and validation
 To tain the CFCN/C2FCN (replace main_cfcn.py with main_c2fcn) as follows:
 ```
-python main_cfcn.py --dataset pairwise_lits --gpu-ids 0,1 --crop-size 400 --base-size 512 --loss-type pairwise_loss --batch-size 16
+python main_cfcn.py --dataset pairwise_lits --gpu-ids 0,1 --crop-size 512 --base-size 512 --loss-type pairwise_loss --batch-size 16
 ```
 Once the model is trained, validate it as running:
 ```
@@ -22,7 +22,7 @@ python main_cfcn.py --dataset pairwise_lits --gpu-ids 0 --crop-size 512 --base-s
 ## 3. Performance evaluation
 Evaluate the segmentation performance with an average of Dice per volume score (Dice-per-case) and a global Dice score (Dice-global) 
 ```
-python lits_output_stats.py --output-dir './run/pairwise_lits/pairwise_deeplab-resnet18/experiment_1/predict_mask/ --is_val --pred-dir './run/pairwise_lits/pairwise_deeplab-resnet18/experiment_1/result/' --data_root './lits/training/'
+python lits_output_stats.py --output-dir './run/pairwise_lits/pairwise_deeplab-resnet18/experiment_1/predict_mask/ --is_val --pred-dir './run/pairwise_lits/pairwise_deeplab-resnet18/experiment_1/result/' --data_root '../lits/training/'
 ```
 
 # Citation
