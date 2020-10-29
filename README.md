@@ -10,7 +10,7 @@ python prepare_lits.py --data_path '../lits/training/' --pre_data_result '../lit
 Note one can customize the path 'pre_data_result', but should keep the path name consistent in the file 'mypath.py'.
 
 ## 2. Training and validation
-To tain the CFCN/C2FCN (replace main_cfcn.py with main_c2fcn) as follows:
+To tain the CFCN/C2FCN (replace main_cfcn.py with main_c2fcn.py) as follows:
 ```
 python main_cfcn.py --dataset pairwise_lits --gpu-ids 0,1 --crop-size 512 --base-size 512 --loss-type pairwise_loss --batch-size 16
 ```
